@@ -6,10 +6,10 @@
   "license": "MIT",
   "description": "Get random people names.",
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint .",
     "test": "mocha",
     "test:watch": "mocha --watch",
-    "test:coverage": "nyc mocha",
+    "test:coverage": "NODE_ENV=test nyc mocha",
     "validate": "npm-run-all --parallel lint test:coverage",
     "prebuild": "rimraf dist",
     "build": "babel --ignore *test.* --copy-files --out-dir dist src"
@@ -19,7 +19,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-istanbul": "^5.1.0",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0",
@@ -43,14 +45,26 @@
       "text",
       "lcov"
     ],
+    "instrument": false,
+    "sourceMap": false,
     "include": [
       "src"
+    ],
+    "require": [
+      "babel-register"
     ]
   },
   "babel": {
     "presets": [
       "env"
-    ]
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
   },
   "config": {
     "ghooks": {

@@ -1,7 +1,10 @@
-const uniqueRandomArray = require('unique-random-array');
+import uniqueRandomArray from 'unique-random-array';
 const names = require('./names');
 
-module.exports = {
+const randomNamesPack = {
   all: names,
   random: uniqueRandomArray(names),
 };
+
+export default randomNamesPack;
+module.exports = randomNamesPack;

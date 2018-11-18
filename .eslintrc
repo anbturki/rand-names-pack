@@ -4,6 +4,10 @@
     "node": true,
     "es6": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module"
+  },
   "extends": ["eslint:recommended","google"],
   "rules":{},
   "plugins": []
