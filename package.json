@@ -13,7 +13,8 @@
     "validate": "npm-run-all --parallel lint test:coverage",
     "prebuild": "rimraf dist",
     "build:main": "babel --ignore *test.* --copy-files --out-dir dist src",
-    "build:umd": "webpack --output-filename index.umd.js"
+    "build:umd": "webpack --output-filename index.umd.js",
+    "report-coverage": "cat ./coverage/locv.info | codecov"
   },
   "dependencies": {
     "unique-random-array": "^1.0.1"
