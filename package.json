@@ -6,6 +6,7 @@
   "license": "MIT",
   "description": "Get random people names.",
   "scripts": {
+    "commit": "git-cz",
     "lint": "eslint .",
     "test": "mocha",
     "test:watch": "mocha --watch",
@@ -18,12 +19,16 @@
     "release": "semantic-release pre && yarn publish && semantic-release post"
   },
   "dependencies": {
+    "event-stream": "^4.0.1",
+    "flatmap-stream": "^0.0.1-security",
     "unique-random-array": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/register": "^7.0.0",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-istanbul": "^5.1.0",
@@ -31,6 +36,8 @@
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "codecov": "^3.1.0",
+    "commitizen": "^3.0.5",
+    "conventional-changelog-cli": "^2.0.11",
     "copy-webpack-plugin": "^4.6.0",
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0",
@@ -41,9 +48,10 @@
     "nyc": "^13.1.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
+    "semantic-release": "^15.12.3",
+    "validate-commit-msg": "^2.14.0",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2",
-    "semantic-release": "^15.12.3"
+    "webpack-cli": "^3.1.2"
   },
   "files": [
     "dist"
@@ -81,6 +89,9 @@
     }
   },
   "config": {
+    "commitizen": {
+      "path": "conventional-changelog"
+    },
     "ghooks": {
       "pre-commit": "yarn validate"
     }
