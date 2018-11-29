@@ -15,7 +15,7 @@
     "build:main": "babel --ignore *test.* --copy-files --out-dir dist src",
     "build:umd": "webpack",
     "report-coverage": "cat ./coverage/locv.info | codecov",
-    "semantic-release": "semantic-release pre && yarn publish && semantic-release post"
+    "release": "semantic-release pre && yarn publish && semantic-release post"
   },
   "dependencies": {
     "unique-random-array": "^1.0.1"
