@@ -1,3 +1,3 @@
-# Starwares-names
+# Random names package
 
-I like twix!
+it generate random names every time you call the `random` method from the library.
