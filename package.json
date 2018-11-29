@@ -14,10 +14,10 @@
     "prebuild": "rimraf dist",
     "build:main": "babel --ignore *test.* --copy-files --out-dir dist src",
     "build:umd": "webpack",
-    "report-coverage": "cat ./coverage/locv.info | codecov"
+    "report-coverage": "cat ./coverage/locv.info | codecov",
+    "semantic-release": "semantic-release pre && yarn publish && semantic-release post"
   },
   "dependencies": {
-    "semantic-release": "^15.12.3",
     "unique-random-array": "^1.0.1"
   },
   "devDependencies": {
@@ -42,7 +42,8 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "semantic-release": "^15.12.3"
   },
   "files": [
     "dist"
