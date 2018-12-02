@@ -19,8 +19,6 @@
     "release": "semantic-release pre && yarn publish && semantic-release post"
   },
   "dependencies": {
-    "event-stream": "^4.0.1",
-    "flatmap-stream": "^0.0.1-security",
     "unique-random-array": "^1.0.1"
   },
   "devDependencies": {
